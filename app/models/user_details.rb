@@ -26,7 +26,7 @@ class UserDetails < ActiveRecord::Base
           else
             create!(user_detail)
           end
-          return resp
+          return user_detail
         else
           return {:err => "err1", :message => "Something went wrong while trying to access the user details. Please try again."}
         end
@@ -36,7 +36,7 @@ class UserDetails < ActiveRecord::Base
 
   def self.get_user_details(params)
     return {:err => "err0", :message => "Please type username in url."} if params[:username].blank?
-    user_details = where(:username => params[:username]).first
+    user_details = select("user_id, username, name, gender, hometown, location, bio").where(:username => params[:username]).first
     return {:err => "err1", :message => "No user found in database."} if user_details.blank?
     user_details
   end

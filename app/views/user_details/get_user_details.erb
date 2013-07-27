@@ -1,5 +1,12 @@
 <% if @user_details[:err] %>
     <%= @user_details[:message] %>
 <% else %>
-    <%= @user_details.inspect  %>
+    <table >
+      <% @user_details.attributes.each do |k,v| %>
+        <tr>
+          <td><%= k.capitalize %>:     </td>
+          <td><%= v %></td>
+        </tr>
+      <% end %>
+    </table>
 <% end %>
