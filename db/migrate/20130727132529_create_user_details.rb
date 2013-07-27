@@ -1,7 +1,7 @@
 class CreateUserDetails < ActiveRecord::Migration
   def change
     create_table :user_details do |t|
-      t.integer :user_id, :null => false
+      t.column :user_id,'bigint', :null => false
       t.string :username, :null => false
       t.string :name
       t.string :gender
