@@ -15,8 +15,8 @@ class UserDetails < ActiveRecord::Base
                          :username => resp["username"],
                          :name => resp["name"],
                          :gender => resp["gender"],
-                         :hometown => resp["hometown"]["name"],
-                         :location => resp["location"]["name"],
+                         :hometown => resp["hometown"].try(:[], "name"),
+                         :location => resp["location"].try(:[], "name"),
                          :bio => resp["bio"]}
 
           if entry_exists.present?
