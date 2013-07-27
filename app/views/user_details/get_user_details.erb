@@ -1,7 +1,7 @@
 <% if @user_details[:err] %>
     <%= @user_details[:message] %>
 <% else %>
-    <table >
+    <table border="1">
       <% @user_details.attributes.each do |k,v| %>
         <tr>
           <td><%= k.capitalize %>:     </td>
