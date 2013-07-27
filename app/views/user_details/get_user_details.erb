@@ -1,5 +1,5 @@
 <% if @user_details[:err] %>
-    <%= @user_details[:message] %>
+    <div style="color:red"><%= @user_details[:message] %></div>
 <% else %>
     <table border="1">
       <% @user_details.attributes.each do |k,v| %>
@@ -10,3 +10,6 @@
       <% end %>
     </table>
 <% end %>
+
+</br></br>
+<a href="/user">Go Back</a>

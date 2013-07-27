@@ -1,9 +1,9 @@
-<%= flash[:notice] %>
+<div style="color:red"><%= flash[:notice] %></div>
 </br></br>
 <form action="/set_user_details">
-Enter your access token => <input type="text" name="fb_access_token"/>
+Enter your FB access token => <input type="text" name="fb_access_token"/>
 <input type="submit" value="Get & Save The User Details"/>
 </form>
 
 </br></br>
-<div>Click <a href="/user" type="button">here</a> to get saved user details.</div>
+<div>Click <a href="/user">here</a> to get saved user details.</div>

@@ -9,7 +9,7 @@ class UserDetailsController < ApplicationController
     if @user_details[:err].blank?
       redirect_to "/user/#{@user_details["username"]}"
     else
-      redirect_to "/", :notice => "Wrong facebook access token."
+      redirect_to "/", :notice => "Wrong facebook access token. Please provide a correct FB access token."
     end
   end
 end
