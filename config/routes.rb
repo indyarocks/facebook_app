@@ -49,8 +49,10 @@ FacebookApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'user_details#index'
+  get "/user", to: 'user_details#user_index'
   get "/user/:username/", to: 'user_details#get_user_details', :constraints => { :username => /[\w+\.]+/ }
   match "/set_user_details" => "user_details#set_user_details"
+  match "/get_user_details" => "user_details#get_user_details"
 
   # See how all your routes lay out with "rake routes"
 

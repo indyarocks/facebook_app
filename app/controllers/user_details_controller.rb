@@ -1,12 +1,7 @@
 class UserDetailsController < ApplicationController
 
-  def index
-
-  end
-
   def get_user_details
     @user_details = UserDetails.get_user_details(:username => params["username"])
-    params
   end
 
   def set_user_details
